@@ -34,13 +34,13 @@ class HandDetector:
         image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
         if self.results.multi_hand_landmarks:
-            for hand_landmarks in self.results.multi_hand_landmarks:
-                if draw:
-                    self.mp_drawing.draw_landmarks(
-                        image,
-                        hand_landmarks,
-                        self.mp_hands.HAND_CONNECTIONS,
-                    )
+            if draw:
+                for hand_landmarks in self.results.multi_hand_landmarks:
+                        self.mp_drawing.draw_landmarks(
+                            image,
+                            hand_landmarks,
+                            self.mp_hands.HAND_CONNECTIONS,
+                        )
         
         return image
     
