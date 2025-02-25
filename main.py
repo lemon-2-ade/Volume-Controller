@@ -1,5 +1,5 @@
 import cv2
-from hand_tracker import HandDetector
+from hand_detector import HandDetector
 import mediapipe as mp
 import math
 import numpy as np
